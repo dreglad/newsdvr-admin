@@ -11,7 +11,6 @@ const enhanceBuildQuery = (buildQuery) => (introspectionResults) => (fetchType, 
 };
 
 export default async () => {
-  console.log('a', process.env.REACT_APP_API_ENDPOINT)
   return await buildPrismaProvider({
     clientOptions: {
       uri: process.env.REACT_APP_API_ENDPOINT
