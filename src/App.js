@@ -9,8 +9,19 @@ import { RuleList } from './components/rules';
 import { StreamList } from './components/streams';
 import { ExclusionList } from './components/exclusions';
 import { ServiceList } from './components/services';
+import buildProvider from './dataProvider';
+import englishMessages from 'ra-language-english';
+import spanishMessages from 'ra-language-spanish';
 
-import buildProvider from './apiDataProvider';
+const messages = {
+  en: englishMessages,
+  es: spanishMessages
+}
+
+const i18nProvider = locale => {
+  console.log(messages[locale])
+  return messages[locale];
+};
 
 class App extends Component {
   constructor() {

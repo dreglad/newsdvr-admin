@@ -8,6 +8,8 @@
     "graphql-tag": "^2.10.0",
     "prop-types": "^15.6.2",
     "ra-data-opencrud": "^0.0.7",
+    "ra-language-english": "^2.3.0",
+    "ra-language-spanish": "^1.0.0",
     "react": "^16.6.3",
     "react-admin": "^2.4.3",
     "react-apollo": "^2.3.1",
