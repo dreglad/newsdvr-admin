@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 export default {
   Fragment: {
     [GET_LIST]: gql`
-      fragment fragment on Fragment {
+      fragment FragmentFragment on Fragment {
         id
         start
         offset
@@ -14,31 +14,26 @@ export default {
           name
           value
         }
-        metadata
-        store {
-          id
-        }
+        storeName
       }
     `,
   },
 
   Exclusion: {
     [GET_LIST]: gql`
-      fragment fragment on Fragment {
+      fragment ExclusionFragment on Fragment {
         id
         start
         offset
         duration
-        store {
-          id
-        }
+        storeName
       }
     `,
   },
 
   Label: {
     [GET_LIST]: gql`
-      fragment label on Label {
+      fragment LabelFragment on Label {
         id
         slug
         name

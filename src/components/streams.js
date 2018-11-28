@@ -1,11 +1,24 @@
 import React from 'react';
-import { List, Datagrid, TextField } from 'react-admin';
+import {
+  Datagrid,
+  DateField,
+  List,
+  ReferenceManyField,
+  TextField
+} from 'react-admin';
 
 export const StreamList = props => (
   <List {...props}>
     <Datagrid rowClick="edit">
-      <TextField source="id"/>
       <TextField source="name"/>
+      <ReferenceManyField label="Recording stores" reference="Store" target="stream.name">
+        <Datagrid>
+          <TextField source="name" />
+          <DateField source="start" showTime />
+          <DateField source="end" showTime />
+        </Datagrid>
+      </ReferenceManyField>
+
     </Datagrid>
   </List>
 );

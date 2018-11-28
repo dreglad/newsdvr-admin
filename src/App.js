@@ -19,26 +19,28 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    this.setState({ dataProvider: await buildProvider() })
+    console.log(buildProvider);
+    const dataProvider = await buildProvider;
+    this.setState({ dataProvider });
   }
 
   render() {
     const { dataProvider } = this.state;
 
     if (!dataProvider) {
-      return <div>Loading</div>;
+      return <div>Cargando...</div>;
     }
 
     return (
-      <Admin dataProvider={dataProvider}>
-        <Resource name="Store" list={StoreList}/>
+      <Admin locale="es" dataProvider={dataProvider} i18nProvider={i18nProvider}>
+        <Resource name="Store"/>
+        <Resource name="Service" list={ServiceList}/>
+        <Resource name="Stream" list={StreamList}/>
         <Resource name="Fragment" list={FragmentList}/>
+        <Resource name="Exclusion" list={ExclusionList}/>
         <Resource name="Label" list={LabelList}/>
         <Resource name="Rule" list={RuleList}/>
-        <Resource name="Stream" list={StreamList}/>
-        <Resource name="Service" list={ServiceList}/>
         <Resource name="Schedule" list={ScheduleList}/>
-        <Resource name="Exclusion" list={ExclusionList}/>
       </Admin>
     );
   }
