@@ -11,7 +11,7 @@
     "ra-language-english": "^2.3.0",
     "ra-language-spanish": "^1.0.0",
     "react": "^16.6.3",
-    "react-admin": "^2.4.3",
+    "react-admin": "^3.19.12",
     "react-apollo": "^2.3.1",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1",
